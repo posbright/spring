@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="ioc.com.dzm.xml.entity.User">
+    	<property name="uid" value="12"></property>
+    	<property name="name" value="王麻子"></property>
+    	<property name="pwd" value="123456"></property>
+    </bean>
+    <bean id="userService" class="ioc.com.dzm.xml.service.imp.UserServiceImp">
+    	<property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean id="userDao" class="ioc.com.dzm.xml.dao.imp.UserDaoImp">
+    	<property name="user" ref="user"></property>
+    </bean>
+
+</beans>
